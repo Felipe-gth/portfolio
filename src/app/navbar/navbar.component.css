@@ -1,0 +1,26 @@
+li{
+    list-style: none;
+    color: #f3f2dc;
+    font-size: 18px;
+    font-family: Times New Roman, Times, serif
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar{
+    background-color: rgb(64, 78, 78);
+    height: 50px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+}
