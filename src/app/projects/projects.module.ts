@@ -6,7 +6,9 @@ import { ProjectsComponent } from './projects.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: '', component: ProjectsComponent }];
+const routes: Routes = [
+    { path: 'projects',      component: ProjectsComponent }
+];
 
 @NgModule({
     declarations: [ProjectsComponent, ProjectComponent],
