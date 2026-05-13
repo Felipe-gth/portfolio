@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 
-import { NavbarModule } from "../navbar/navbar.module";
+import { NavbarModule } from '../navbar/navbar.module';
 
 const routes: Routes = [];
 
 @NgModule({
-  declarations: [HomeComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), NavbarModule],
-  exports: [HomeComponent]
+    declarations: [HomeComponent],
+    imports: [CommonModule, RouterModule.forChild(routes), NavbarModule],
+    exports: [HomeComponent],
 })
-export class HomeModule { }
+export class HomeModule {}

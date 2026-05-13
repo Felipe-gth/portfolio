@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  template: `
-  <app-home></app-home>
-  `
+    selector: 'app-root',
+    template: ` <app-home></app-home> `,
 })
 export class AppComponent {
-  title = 'portfolio';
+    title = 'portfolio';
 }

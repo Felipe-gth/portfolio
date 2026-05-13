@@ -6,8 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [];
 
 @NgModule({
-  declarations: [NavbarComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [NavbarComponent]
+    declarations: [NavbarComponent],
+    imports: [CommonModule, RouterModule.forChild(routes)],
+    exports: [NavbarComponent],
 })
 export class NavbarModule {}
