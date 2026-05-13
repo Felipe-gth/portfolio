@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 
-import { NavbarModule } from '../navbar/navbar.module';
+import { NavbarModule } from "../navbar/navbar.module";
 
 const routes: Routes = [];
 
