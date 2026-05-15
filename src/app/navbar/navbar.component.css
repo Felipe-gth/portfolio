@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #404e4e;
+    background-color:  #394545;
     height: 50px;
     width: 100%;
     max-width: 700px;
@@ -22,7 +22,7 @@
 
 li{
     list-style: none;
-    color: #f3f2dc;
+    color: #fefefa;
     font-size: 18px;
     font-family: Times New Roman, Times, serif
 }
@@ -41,7 +41,7 @@ a::after {
     width: 0;
     height: 2px;
 
-    background: #f3f2dc;
+    background: #fefefa;
 
     transition: 0.2s ease;
     transform: translateX(-50%);

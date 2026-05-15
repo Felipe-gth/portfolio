@@ -6,7 +6,9 @@ import { HomeComponent } from './home.component';
 
 import { NavbarModule } from '../navbar/navbar.module';
 
-const routes: Routes = [];
+const routes: Routes = [
+    {path: '', component: HomeComponent},
+];
 
 @NgModule({
     declarations: [HomeComponent],
