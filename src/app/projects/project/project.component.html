@@ -1,12 +1,12 @@
 <div class="project">
     <section class="project-info">
-        <h1>Titulo do projeto</h1>
-        <p>Descrição</p>
-        <p>Tecnologias</p>
+        <h1>{{ project.title }}</h1>
+        <p>Descrição: {{ project.description }}</p>
+        <p>Tecnologias: {{ project.technologies?.join(', ') }}</p>
     </section>
 
     <section class="project-links">
-        <p>Link: <a href="" target="_blank">https://example.com</a></p>
+        <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link }}</a></p>
         <a id="a-Details" routerLink="">Detalhes</a>
     </section>
 </div>

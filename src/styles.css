@@ -1,3 +1,8 @@
+* {
+    font-family: Times New Roman, Times, serif;
+}
+
 body{
-    padding: 40px 0px 0px 0px;
+    padding: 65px 0px 0px 0px;
+    background-color: #272e2e;
 }

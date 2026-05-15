@@ -4,5 +4,5 @@ export interface Project {
     description?: string;
     technologies?: string[];
     screenshots?: string[];
-    link: string;
+    link?: string;
 }
