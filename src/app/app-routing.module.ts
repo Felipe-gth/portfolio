@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './Home/home.component';
+
 import { ProjectsModule } from './projects/projects.module';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: '', 
+        loadChildren: () =>
+            import('./Home/home.module').then((m) => m.HomeModule),
+        pathMatch: 'full'
+    },
     {
         path: 'projects',
         loadChildren: () =>
-            import('./projects/projects.module').then((m) => m.ProjectsModule),
+            import('./projects/projects.module').then((m) => m.ProjectsModule)
     },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes), ProjectsModule],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}
