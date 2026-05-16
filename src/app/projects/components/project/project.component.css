@@ -2,7 +2,7 @@
     background-color: #394545;
     border-radius: 15px;
     border: 1px solid #f3f2dc;
-    width: 400px;
+    width: 340px;
     height: border-box;
     color: #fefefa;
     display: flex;
@@ -11,6 +11,14 @@
     padding: 0px 25px 0px 25px;
     box-shadow: 0px 0px 12px 10px #0000001a;
     box-sizing: border-box;
+}
+
+.project-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
 }
 
 p {
@@ -31,12 +39,4 @@ a:hover {
 #a-Details {
     text-decoration: underline 1px solid #fefefa;
     text-underline-offset: 2px;
-}
-
-.project-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 16px;
-    align-items: baseline;
 }

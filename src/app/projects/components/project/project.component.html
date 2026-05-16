@@ -1,12 +1,13 @@
-<div class="project">
-    <section class="project-info">
-        <h1>{{ project.title }}</h1>
+<section class="project">
+    <article>
+        <div class="project-title">
+            <h1>{{ project.title }}</h1>
+            <a id="a-Details" [routerLink]="['/projects', project.id]">Detalhes</a>
+        </div>
+
         <p>Descrição: {{ project.description }}</p>
         <p>Tecnologias: {{ project.technologies?.join(', ') }}</p>
-    </section>
+    </article>
 
-    <section class="project-links">
-        <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link }}</a></p>
-        <a id="a-Details" [routerLink]="['/projects', project.id]">Detalhes</a> 
-    </section>
-</div>
+    <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link }}</a></p>
+</section>

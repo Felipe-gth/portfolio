@@ -22,8 +22,9 @@
 
 li{
     list-style: none;
-    color: #fefefa;
-    font-size: 18px;
+    color: #f3f2dc;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 a {
@@ -40,7 +41,7 @@ a::after {
     width: 0;
     height: 2px;
 
-    background: #fefefa;
+    background: #f3f2dc;
 
     transition: 0.2s ease;
     transform: translateX(-50%);
