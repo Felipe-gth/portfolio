@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { projects } from '../../shared/data/projects.data';
 import { Project } from '../../shared/models/project.model';
 
 @Component({
@@ -23,47 +25,15 @@ import { Project } from '../../shared/models/project.model';
     styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent implements OnInit {
-    projects: Project[] = [
-        {
-            id: 1,
-            title: 'portfolio',
-            description: 'This is the first project',
-            technologies: ['Angular', 'TypeScript', 'CSS'],
-            imagesURL: ['image1, image2, image3'],
-            link: 'https://example.com/project1',
-        },
-        {
-            id: 2,
-            title: 'tcc',
-            description: 'This is the second project',
-            technologies: ['React', 'JavaScript', 'HTML'],
-            imagesURL: ['image1, image2, image3'],
-            link: 'https://example.com/project2',
-        },
-        {
-            id: 3,
-            title: 'toDoList',
-            description: 'This is the third project',
-            technologies: ['Vue.js', 'JavaScript', 'CSS'],
-            imagesURL: ['image1, image2, image3'],
-            link: 'https://example.com/project3',
-        },
-        {
-            id: 4,
-            title: 'paymentAPI',
-            description: 'This is the fourth project',
-            technologies: ['Vue.js', 'JavaScript', 'CSS'],
-            imagesURL: ['image1, image2, image3'],
-            link: 'https://example.com/project3',
-        },
-    ];
 
     filtro: string = '';
+    
+    projectsCm: Project[] = projects;
 
     ngOnInit(): void {}
 
     filterProjects(filtro: string) {
-        return this.projects.filter((p) =>
+        return this.projectsCm.filter((p) =>
             p.title?.toUpperCase().includes(filtro.toUpperCase()),
         );
     }
