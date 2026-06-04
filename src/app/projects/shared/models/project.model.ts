@@ -1,8 +1,10 @@
+import { Technology } from './technology.model';
+
 export interface Project {
     id: number;
     title: string;
     description?: string;
-    technologies?: string[];
+    technologies?: Technology[];
     imagesURL?: string[];
     link?: string;
 }
