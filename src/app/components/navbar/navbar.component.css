@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #313a3a;
+    background-color: #2a2a2a;
     height: 50px;
     width: 100%;
     max-width: 700px;
@@ -22,7 +22,7 @@
 
 li{
     list-style: none;
-    color: #f3f2dc;
+    color: #f0e8d4;
     font-size: 20px;
     font-weight: 600;
 }
@@ -30,6 +30,7 @@ li{
 a {
     position: relative;
     text-decoration: none;
+    color: #f0e8d4;
 }
 
 a::after {
@@ -41,10 +42,14 @@ a::after {
     width: 0;
     height: 2px;
 
-    background: #f3f2dc;
+    background: #f0e8d4;
 
     transition: 0.2s ease;
     transform: translateX(-50%);
+}
+
+a:hover {
+    color: #f0e8d4;
 }
 
 a:hover::after {

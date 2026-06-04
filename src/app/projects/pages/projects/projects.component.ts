@@ -7,13 +7,14 @@ import { Project } from '../../shared/models/project.model';
     selector: 'app-projects',
     template: `
         <section class="projects">
-            <div class="input-center">
+            <form role="search" class="input-center">
                 <input
-                    type="text"
+                    type="search"
                     placeholder="Procurar projeto"
+                    aria-label="Procurar projeto"
                     [(ngModel)]="filtro"
                 />
-            </div>
+            </form>
 
           <app-project [projects]="filterProjects(filtro)"></app-project>
         </section>

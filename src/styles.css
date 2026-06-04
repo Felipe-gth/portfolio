@@ -1,13 +1,60 @@
 * {
-    font-family: Times New Roman, Times, serif;
+    font-family: 'Inter', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #3d3d3d #6b5d3f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 *:focus {
     outline: none;
 }
 
-body{
-    padding: 65px 0px 0px 0px;
-    background-color: #b6b6b6;
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+}
 
+*::-webkit-scrollbar-track {
+    background: #6b5d3f;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #3d3d3d;
+    border-radius: 3px;
+    border: 2px solid #6b5d3f;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-button:start,
+*::-webkit-scrollbar-button:end,
+*::-webkit-scrollbar-button:increment,
+*::-webkit-scrollbar-button:decrement,
+*::-webkit-scrollbar-button:vertical:start:increment,
+*::-webkit-scrollbar-button:vertical:end:decrement,
+*::-webkit-scrollbar-button:horizontal:start:increment,
+*::-webkit-scrollbar-button:horizontal:end:decrement {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+*::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+body {
+    padding: 65px 0 0 0;
+    background-color: #635c4b;
 }
