@@ -1,13 +1,15 @@
-<section class="project">
-    <article>
-        <div class="project-title">
-            <h1>{{ project.title }}</h1>
-            <a id="a-Details" [routerLink]="['/projects', project.id]">Detalhes</a>
-        </div>
-
-        <p>Descrição: {{ project.description }}</p>
-        <p>Tecnologias: {{ project.technologies?.join(', ') }}</p>
-    </article>
-
-    <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link }}</a></p>
-</section>
+<ul>
+    <li class="project" *ngFor="let project of projects">
+        <article>
+            <div class="project-title">
+                <h1>{{ project.title }}</h1>
+                <a id="a-Details" [routerLink]="['/projects', project.id]">Detalhes</a>
+            </div>
+    
+            <p>Descrição: {{ project.description }}</p>
+            <p>Tecnologias: {{ project.technologies?.join(', ') }}</p>
+        </article>
+        <iframe [src]="sanitizar(project.link)"></iframe>
+        <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link }}</a></p>
+    </li>
+</ul>

@@ -15,11 +15,7 @@ import { Project } from '../../shared/models/project.model';
                 />
             </div>
 
-            <ul>
-                <li *ngFor="let project of filterProjects(filtro)">
-                    <app-project [project]="project"></app-project>
-                </li>
-            </ul>
+          <app-project [projects]="filterProjects(filtro)"></app-project>
         </section>
     `,
     styleUrls: ['./projects.component.css'],
