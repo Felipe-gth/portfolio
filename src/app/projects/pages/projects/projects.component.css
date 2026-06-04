@@ -3,15 +3,6 @@
     flex-direction: column;
 }
 
-.input-center {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-}
-
 input {
     background-color: #394545;
     width: 550px;
@@ -27,16 +18,25 @@ input {
     box-shadow: 2px 2px 12px 10px #0000001a;
 }
 
+.input-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
 input::placeholder {
     padding: 10px;
 }
 
 ul {
-    padding-top: 10px;
-    margin: 50px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, 340px);
-    justify-content: space-around;
-    gap: 20px;
-}
+    justify-content: start;
+    gap: 32px;
+    margin: 55px 0px 0px 25px;
+}   

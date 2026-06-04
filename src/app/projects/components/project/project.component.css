@@ -1,9 +1,9 @@
 .project {
-    background-color: #394545;
+    background-color: #212828;
     border-radius: 15px;
     border: 1px solid #f3f2dc;
     width: 340px;
-    height: border-box;
+    height: 375px;
     color: #fefefa;
     display: flex;
     flex-direction: column;

@@ -13,11 +13,13 @@ import { Project } from '../../shared/models/project.model';
 export class DetailsComponent implements OnInit {
     project?: Project;
 
-    projectsDet: Project[] = projects;
+    projectsDet: Project[] = [];
 
     constructor(private route: ActivatedRoute) {}
 
     ngOnInit(): void {
+        this.projectsDet = projects;
+
         const id = this.route.snapshot.paramMap.get('id');
 
         this.project = this.projectsDet.find((p) => p.id === Number(id));

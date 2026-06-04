@@ -1,1 +1,7 @@
-<h1>{{ project.title }}</h1>
+<section>
+    <h1>{{ project?.title }}</h1>
+
+    <ul>
+        <li *ngFor="let technology of project?.technologies"> <img [src]="technology.iconURL" [alt]="technology.name"> </li>
+    </ul>
+</section>
