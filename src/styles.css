@@ -1,7 +1,7 @@
 * {
     font-family: 'Inter', sans-serif;
     scrollbar-width: thin;
-    scrollbar-color: #3d3d3d #6b5d3f;
+    scrollbar-color: #3d3d3d #635c4b;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,13 +22,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 *::-webkit-scrollbar-track {
-    background: #6b5d3f;
+    background: #635c4b;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #3d3d3d;
+    background-color: #635c4b;
     border-radius: 3px;
-    border: 2px solid #6b5d3f;
+    border: 2px solid #635c4b;
     background-clip: padding-box;
     -webkit-appearance: none;
     appearance: none;

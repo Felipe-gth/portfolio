@@ -9,29 +9,30 @@ import { Project } from '../../shared/models/project.model';
         <section class="projects">
             <form role="search" class="input-center">
                 <input
-                    type="search"
+                    type="text"
+                    autocomplete="off"
                     placeholder="Procurar projeto"
                     aria-label="Procurar projeto"
-                    [(ngModel)]="filtro"
+                    [(ngModel)]="filter"
+                    name="filter"
                 />
             </form>
 
-          <app-project [projects]="filterProjects(filtro)"></app-project>
+            <app-project [projects]="filterProjects(filter)"></app-project>
         </section>
     `,
     styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent implements OnInit {
+    filter: string = '';
 
-    filtro: string = '';
-    
     projectsCm: Project[] = projects;
 
     ngOnInit(): void {}
 
-    filterProjects(filtro: string) {
+    filterProjects(filter: string) {
         return this.projectsCm.filter((p) =>
-            p.title?.toUpperCase().includes(filtro.toUpperCase()),
+            p.title?.toUpperCase().includes(filter.toUpperCase()),
         );
     }
 }

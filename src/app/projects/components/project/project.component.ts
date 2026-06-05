@@ -11,7 +11,7 @@ export class ProjectComponent implements OnInit {
     
     @Input() projects: Project[] = [];
 
-    constructor ( private Sanitizer: DomSanitizer) {
+    constructor (private Sanitizer: DomSanitizer) {
         
     }
 
