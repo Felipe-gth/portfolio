@@ -1,7 +1,5 @@
 <section class="details">
     <h1>{{ project?.title }}</h1>
 
-    <ul class="technologies-list" aria-label="Tecnologias utilizadas">
-        <li *ngFor="let technology of project?.technologies"> <img [src]="technology.iconURL" [alt]="technology.name"> </li>
-    </ul>
+    <app-icon></app-icon>
 </section>

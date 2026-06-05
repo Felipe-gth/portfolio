@@ -7,6 +7,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DetailsComponent } from './pages/details/details.component';
+import { IconModule } from '../components/icon/icon.module';
 
 const routes: Routes = [
     { path: '', component: ProjectsComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [ProjectsComponent, ProjectComponent, DetailsComponent],
-    imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
+    imports: [CommonModule, RouterModule.forChild(routes), FormsModule, IconModule],
     exports: [ProjectComponent],
 })
 export class ProjectsModule {}
