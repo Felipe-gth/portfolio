@@ -1,0 +1,12 @@
+<ul class="technologies">
+    <li *ngFor="let technology of technologies">
+        <section class="technology">
+            <app-icon [iconURL]="technology?.iconURL"></app-icon>
+        
+            <article>
+                <h3>{{ technology?.name }}</h3>
+                <p>{{ technology?.version }}</p>
+            </article>
+        </section>
+    </li>
+</ul>
