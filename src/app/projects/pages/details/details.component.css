@@ -1,4 +1,8 @@
-section {
-    color: #f0e8d4;
+.details {
+    color: #dfddcb;
     text-align: center;
+}
+
+.details h1 {
+    margin: 0px !important;
 }
