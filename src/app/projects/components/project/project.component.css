@@ -1,20 +1,20 @@
 .projects-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 380px);
+    grid-template-columns: repeat(auto-fill, 370px);
     justify-content: center;
     gap: 32px;
     padding: 0 32px;
     margin: 15px auto 0 !important;
-    max-width: 1680px;
+    max-width: 1640px;
     list-style: none;
     box-sizing: border-box;
+    padding-bottom: 32px;
 }
 
 .project {
     background-color: #373737;
     border-radius: 15px;
     border: 1px solid #d6cdb8;
-    width: 380px;
     min-height: 500px;
     max-height: border-box;
     color: #f0e8d4;
@@ -60,7 +60,19 @@
 .project-link {
     display: flex;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
+    min-width: 0;
+}
+
+.project-link p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-link a {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-link iframe {

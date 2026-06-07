@@ -22,7 +22,7 @@
 
         <footer class="project-link">
             <iframe [src]="sanitizar(project.link)" scrolling="no"></iframe>
-            <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link }}</a></p>
+            <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link?.slice(8) }}</a></p>
         </footer>
     </li>
 </ul>
