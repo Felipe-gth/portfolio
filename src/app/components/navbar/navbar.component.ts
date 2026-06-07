@@ -1,27 +1,25 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
     selector: 'app-navbar',
-    template: ` <nav
-        class="navbar"
-        [class.hidden]="isHidden"
-        aria-label="Navegação principal"
-    >
+    template: ` 
+    <nav class="navbar" [class.hidden]="isHidden" aria-label="Navegação principal">
         <ul class="list">
             <li><a routerLink="">Inicio</a></li>
             <li><a routerLink="projects">Meus projetos</a></li>
             <li><a routerLink="">Sobre mim</a></li>
             <li><a routerLink="">Contato</a></li>
         </ul>
-    </nav>`,
+    </nav>
+    `,
     styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-    private lastScroll = 0;
     isHidden = false;
-    private tolerance = 0;
+    lastScroll = 0;
 
-    constructor() {}
+    constructor(private navbarService: NavbarService) {}
 
     ngOnInit(): void {}
 
@@ -29,24 +27,14 @@ export class NavbarComponent implements OnInit {
     onScroll(): void {
         const currentScroll = window.pageYOffset;
 
-        // Evita comportamento estranho no topo da página
+        this.isHidden = currentScroll > this.lastScroll;
+
         if (currentScroll <= 0) {
             this.isHidden = false;
-            return;
         }
 
-        const scrollDifference = currentScroll - this.lastScroll;
+        this.navbarService.isHidden$.next(this.isHidden);
 
-        // Descendo
-        if (scrollDifference > this.tolerance) {
-            this.isHidden = true;
-            this.lastScroll = currentScroll;
-        }
-
-        // Subindo
-        if (scrollDifference < -this.tolerance) {
-            this.isHidden = false;
-            this.lastScroll = currentScroll;
-        }
+        this.lastScroll = currentScroll;
     }
 }
