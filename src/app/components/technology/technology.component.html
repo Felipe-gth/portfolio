@@ -1,11 +1,15 @@
 <ul class="technologies">
     <li *ngFor="let technology of technologies">
         <section class="technology">
-            <app-icon [iconURL]="technology?.iconURL"></app-icon>
-        
-            <article>
-                <h3>{{ technology?.name }}</h3>
+            <article class="technology-info">
+                <app-icon [iconURL]="technology?.iconURL"></app-icon>
+
+                <h1>{{ technology?.name }}</h1>
                 <p>{{ technology?.version }}</p>
+            </article>
+
+            <article class="technology-doc">
+                <p>Doc: <a href="{{ technology?.doc }}" target="_blank">{{ technology?.doc }}</a></p>
             </article>
         </section>
     </li>
