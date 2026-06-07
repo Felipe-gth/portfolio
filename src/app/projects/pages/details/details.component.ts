@@ -13,7 +13,7 @@ import { Project } from '../../shared/models/project.model';
 export class DetailsComponent implements OnInit {
     project?: Project;
 
-    projectsDet: Project[] = [];
+    projectsDet?: Project[] = [];
 
     constructor(private route: ActivatedRoute) {}
 

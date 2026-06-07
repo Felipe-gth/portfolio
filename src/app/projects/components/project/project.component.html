@@ -1,24 +1,24 @@
 <ul class="projects-list">
     <li class="project" *ngFor="let project of projects">
-        <article>
+        <section>
             <header class="project-title">
                 <h1>{{ project.title }}</h1>
                 <a id="a-Details" [routerLink]="['/projects', project.id]">Detalhes</a>
             </header>
 
-            <section class="project-description">
+            <article class="project-description">
                 <p>Descrição: {{ project.description }}</p>
 
-                <section class="technologies">
+                <div class="technologies">
                     <p>Tecnologias:</p>
                     <ul>
                         <li *ngFor="let technology of project.technologies">
                             <span>{{ technology.name }}</span>
                         </li>
                     </ul>
-                </section>
-            </section>
-        </article>
+                </div>
+            </article>
+        </section>
 
         <footer class="project-link">
             <iframe [src]="sanitizar(project.link)" scrolling="no"></iframe>

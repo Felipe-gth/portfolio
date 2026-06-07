@@ -1,5 +1,7 @@
 <section class="details">
     <h1>{{ project?.title }}</h1>
-
-    <app-icon></app-icon>
+    
+    <article>
+        <app-technology [technologies]="project?.technologies"></app-technology>
+    </article>
 </section>
