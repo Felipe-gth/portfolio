@@ -4,14 +4,14 @@
     justify-content: center;
     gap: 32px;
     padding: 0 32px;
-    margin: 53px auto 0 !important;
+    margin: 15px auto 0 !important;
     max-width: 1680px;
     list-style: none;
     box-sizing: border-box;
 }
 
 .project {
-    background-color: #2a2a2a;
+    background-color: #373737;
     border-radius: 15px;
     border: 1px solid #d6cdb8;
     width: 380px;

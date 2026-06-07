@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 import { projects } from '../../shared/data/projects.data';
 import { Project } from '../../shared/models/project.model';
@@ -7,7 +8,7 @@ import { Project } from '../../shared/models/project.model';
     selector: 'app-projects',
     template: `
         <section class="projects">
-            <form role="search" class="input-center">
+            <div role="search" class="input" [class.nav-hidden]="isNavbarHidden">
                 <input
                     type="text"
                     autocomplete="off"
@@ -16,7 +17,7 @@ import { Project } from '../../shared/models/project.model';
                     [(ngModel)]="filter"
                     name="filter"
                 />
-            </form>
+            </div>
 
             <app-project [projects]="filterProjects(filter)"></app-project>
         </section>
@@ -28,7 +29,15 @@ export class ProjectsComponent implements OnInit {
 
     projectsCm: Project[] = projects;
 
-    ngOnInit(): void {}
+    isNavbarHidden = false;
+
+    constructor(private navbarService: NavbarService) {}
+
+    ngOnInit(): void {
+        this.navbarService.isHidden$.subscribe(hidden => {
+            this.isNavbarHidden = hidden;
+        });
+    }
 
     filterProjects(filter: string) {
         return this.projectsCm.filter((p) =>
