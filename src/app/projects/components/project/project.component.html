@@ -20,9 +20,11 @@
             </article>
         </section>
 
-        <footer class="project-link">
+        <footer class="iframe">
             <iframe [src]="sanitizar(project.link)" scrolling="no"></iframe>
-            <p>Link: <a href="{{ project.link }}" target="_blank"> {{ project.link?.slice(8) }}</a></p>
+            <a href="{{ project.link }}" target="_blank" class="acessar"> 
+                <span>Acessar </span>
+            </a>
         </footer>
     </li>
 </ul>

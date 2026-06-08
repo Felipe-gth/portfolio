@@ -15,13 +15,13 @@
     background-color: #373737;
     border-radius: 15px;
     border: 1px solid #d6cdb8;
-    min-height: 500px;
+    min-height: 450px;
     max-height: border-box;
     color: #f0e8d4;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0px 25px 0px 25px;
+    padding: 0px 25px 25px 25px;
     box-shadow: 0px 0px 12px 10px #0000001a;
     box-sizing: border-box;
 }
@@ -57,27 +57,70 @@
     margin: 0px;
 }
 
-.project-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 0;
-}
-
-.project-link p {
-    white-space: nowrap;
+.iframe {
+    position: relative;
+    width: 100%;
     overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.project-link a {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.project-link iframe {
     border-radius: 10px;
-    overflow: hidden;
+    z-index: 0;
+}
+
+.iframe iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.acessar {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-decoration: none;
+}
+
+.acessar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top, #2c2c2c 0%, #40404080 30%, transparent 60%);
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s ease;
+
+    border-radius: inherit;
+}
+
+.acessar span {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 25px;
+
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.iframe:hover .acessar::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.iframe:hover .acessar span {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.iframe a {
+    font-weight: 900;
+    color: #dfddcb;
+    text-decoration: none;
 }
 
 h1 {

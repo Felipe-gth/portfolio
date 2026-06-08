@@ -10,7 +10,7 @@ import { Project } from '../../shared/models/project.model';
         <section class="projects">
             <div role="search" class="input" [class.nav-hidden]="isNavbarHidden">
                 <input
-                    type="text"
+                    type="search"
                     autocomplete="off"
                     placeholder="Procurar projeto"
                     aria-label="Procurar projeto"
