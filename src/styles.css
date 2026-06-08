@@ -59,3 +59,9 @@ body {
     padding: 50px 0 0 0;
     background-color: #635c4b;
 }
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
