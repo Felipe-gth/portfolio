@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
     selector: 'app-root',
     template: ` 
     <app-navbar></app-navbar>
-    <router-outlet></router-outlet> `,
+    <section class="content">
+        <router-outlet></router-outlet>
+    </section> 
+    <app-footer></app-footer>
+    `,
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
     title = 'portfolio';
