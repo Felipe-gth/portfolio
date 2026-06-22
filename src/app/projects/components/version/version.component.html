@@ -1,1 +1,8 @@
-<p>version works!</p>
+<ul class="versions">
+    <li *ngFor="let version of versions">
+        <div class="card">
+            <p>Versão: {{ version.version }}</p>
+            <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAASElEQVR4nGNgGPrg2tkd/ynBDNQwoJxsA87sqId5o5xszTBAkiHomkkyBJdmogwhpBmvIcRqxmoIqZoZoODq2e0NIEyW5qEDAJ2+VF+wSIRNAAAAAElFTkSuQmCC" alt="sort-down"></span>
+        </div>
+    </li>
+</ul>

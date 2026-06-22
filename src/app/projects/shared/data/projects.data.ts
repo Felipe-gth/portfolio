@@ -10,6 +10,10 @@ export const projects: Project[] = [
             { name: 'TypeScript', version: '4.0.8', iconURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1280px-Typescript.svg.png', doc: 'https://www.typescriptlang.org/pt/docs/' },
             { name: 'CSS', version: '3', iconURL: 'https://prosimples.com/wp-content/uploads/2024/01/css-3.png', doc: 'https://devdocs.io/css/' },
         ],
+        versions: [ 
+            {version: 1, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'},
+            {version: 2, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+        ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project1',
     },

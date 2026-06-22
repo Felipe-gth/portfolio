@@ -8,7 +8,11 @@ import { Project } from '../../shared/models/project.model';
     selector: 'app-projects',
     template: `
         <section class="projects">
-            <div role="search" class="input" [class.nav-hidden]="isNavbarHidden">
+            <div
+                role="search"
+                class="input"
+                [class.nav-hidden]="isNavbarHidden"
+            >
                 <input
                     type="search"
                     autocomplete="off"
@@ -34,7 +38,7 @@ export class ProjectsComponent implements OnInit {
     constructor(private navbarService: NavbarService) {}
 
     ngOnInit(): void {
-        this.navbarService.isHidden$.subscribe(hidden => {
+        this.navbarService.isHidden$.subscribe((hidden) => {
             this.isNavbarHidden = hidden;
         });
     }

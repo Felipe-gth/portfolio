@@ -1,9 +1,11 @@
 <section class="details">
     <h1>{{ project?.title }}</h1>
     
-    <article class="technologies">
+    <article>
         <app-technology [technologies]="project?.technologies"></app-technology>
     </article>
 
-    <app-version></app-version>
+    <article>
+        <app-version [versions]="project?.versions"></app-version>
+    </article>
 </section>
