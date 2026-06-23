@@ -1,40 +1,91 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+    Component,
+    NgZone,
+    OnDestroy,
+    OnInit,
+} from '@angular/core';
+
 import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
     selector: 'app-navbar',
-    template: ` 
+    template: `
     <nav class="navbar" [class.hidden]="isHidden" aria-label="Navegação principal">
         <ul class="list">
             <li><a routerLink="">Inicio</a></li>
             <li><a routerLink="projects">Meus projetos</a></li>
             <li><a routerLink="">Sobre mim</a></li>
-            <li><a routerLink="">Contato</a></li>
         </ul>
     </nav>
     `,
     styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
+
     isHidden = false;
     lastScroll = 0;
 
-    constructor(private navbarService: NavbarService) {}
+    private ticking = false;
 
-    ngOnInit(): void {}
+    constructor(
+        private navbarService: NavbarService,
+        private ngZone: NgZone
+    ) {}
 
-    @HostListener('window:scroll')
-    onScroll(): void {
-        const currentScroll = window.pageYOffset;
+    private handleScroll = (): void => {
 
-        this.isHidden = currentScroll > this.lastScroll;
+        if (this.ticking) return;
 
-        if (currentScroll <= 0) {
-            this.isHidden = false;
-        }
+        this.ticking = true;
 
-        this.navbarService.isHidden$.next(this.isHidden);
+        requestAnimationFrame(() => {
 
-        this.lastScroll = currentScroll;
+            const currentScroll = window.scrollY;
+
+            const diff = currentScroll - this.lastScroll;
+
+            if (diff !== 0) {
+
+                const hidden = diff > 0;
+
+                if (hidden !== this.isHidden) {
+
+                    this.ngZone.run(() => {
+
+                        this.isHidden = hidden;
+
+                        this.navbarService.isHidden$.next(
+                            this.isHidden
+                        );
+                    });
+                }
+
+                this.lastScroll = currentScroll;
+            }
+
+            this.ticking = false;
+        });
+    };
+
+    ngOnInit(): void {
+
+        this.ngZone.runOutsideAngular(() => {
+
+            window.addEventListener(
+                'scroll',
+                this.handleScroll,
+                {
+                    passive: true
+                }
+            );
+        });
+    }
+
+    ngOnDestroy(): void {
+
+        window.removeEventListener(
+            'scroll',
+            this.handleScroll
+        );
     }
 }
