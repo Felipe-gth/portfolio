@@ -1,11 +1,8 @@
-import {
-    Component,
-    NgZone,
-    OnDestroy,
-    OnInit,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { NavbarService } from 'src/app/services/navbar.service';
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
     selector: 'app-navbar',
@@ -23,69 +20,24 @@ import { NavbarService } from 'src/app/services/navbar.service';
 export class NavbarComponent implements OnInit, OnDestroy {
 
     isHidden = false;
-    lastScroll = 0;
-
-    private ticking = false;
+    private sub!: Subscription;
 
     constructor(
         private navbarService: NavbarService,
-        private ngZone: NgZone
+        private scrollService: ScrollService,
     ) {}
 
-    private handleScroll = (): void => {
-
-        if (this.ticking) return;
-
-        this.ticking = true;
-
-        requestAnimationFrame(() => {
-
-            const currentScroll = window.scrollY;
-
-            const diff = currentScroll - this.lastScroll;
-
-            if (diff !== 0) {
-
-                const hidden = diff > 0;
-
-                if (hidden !== this.isHidden) {
-
-                    this.ngZone.run(() => {
-
-                        this.isHidden = hidden;
-
-                        this.navbarService.isHidden$.next(
-                            this.isHidden
-                        );
-                    });
-                }
-
-                this.lastScroll = currentScroll;
-            }
-
-            this.ticking = false;
-        });
-    };
-
     ngOnInit(): void {
-
-        this.ngZone.runOutsideAngular(() => {
-
-            window.addEventListener(
-                'scroll',
-                this.handleScroll,
-                {
-                    passive: true
-                }
-            );
+        this.sub = this.scrollService.direction$.subscribe(direction => {
+            const hidden = direction === 'down';
+            if (hidden !== this.isHidden) {
+                this.isHidden = hidden;
+                this.navbarService.isHidden$.next(this.isHidden);
+            }
         });
     }
 
     ngOnDestroy(): void {
-
-        window.removeEventListener(
-            'scroll',
-            this.handleScroll
-        );
+        this.sub.unsubscribe();
     }
 }
