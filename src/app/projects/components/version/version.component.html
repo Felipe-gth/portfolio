@@ -1,8 +1,15 @@
 <ul class="versions">
-    <li *ngFor="let version of versions">
-        <div class="card">
-            <p>Versão: {{ version.version }}</p>
-            <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAASElEQVR4nGNgGPrg2tkd/ynBDNQwoJxsA87sqId5o5xszTBAkiHomkkyBJdmogwhpBmvIcRqxmoIqZoZoODq2e0NIEyW5qEDAJ2+VF+wSIRNAAAAAElFTkSuQmCC" alt="sort-down"></span>
+    <li *ngFor="let version of versions; let i = index">
+        <div class="card" [class.expanded]="expandedIndex === i" (click)="toggle(i)">
+            <div class="card-header">
+                <p id="version">Versão: {{ version.version }}</p>
+                <span class="arrow" [class.open]="expandedIndex === i">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAASElEQVR4nGNgGPrg2tkd/ynBDNQwoJxsA87sqId5o5xszTBAkiHomkkyBJdmogwhpBmvIcRqxmoIqZoZoODq2e0NIEyW5qEDAJ2+VF+wSIRNAAAAAElFTkSuQmCC" alt="sort-down">
+                </span>
+            </div>
+            <div class="card-body" *ngIf="expandedIndex === i" @expand>
+                <p>Descrição: {{ version.description }}</p>
+            </div>
         </div>
     </li>
 </ul>
