@@ -7,7 +7,6 @@ import { ScrollService } from 'src/app/services/scroll.service';
     selector: 'app-footer',
     template: ` 
         <div class="footer-bar" [class.hidden]="isHidden">
-            <hr>
             <footer class="footer">
                 
                 <p>Github: <a href="{{ github }}" target="_blank">{{ github.slice(8) }}</a></p>

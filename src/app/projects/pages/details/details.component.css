@@ -1,6 +1,15 @@
 .details {
     color: #dfddcb;
     text-align: center;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+
+.details article {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .details h1 {

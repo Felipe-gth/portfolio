@@ -4,20 +4,19 @@
     left: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(99, 92, 75, 0.6);
+    background: rgba(58, 52, 42, 0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.3s ease;
     will-change: transform;
+    box-shadow:
+  0 -1px 0 rgba(255,255,255,0.04),
+  0 -8px 24px rgba(0,0,0,0.35);
+  border-top: 1px solid rgba(120, 110, 90, 0.25);
 }
 
 .footer-bar.hidden {
     transform: translateY(100%);
-}
-
-hr {
-    border: 1px solid #383838;
-    margin: 0;
 }
 
 .footer {
@@ -25,7 +24,7 @@ hr {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    color: #2c2c2c;
+    color: #D6C6A5;
     background: transparent;
     padding: 6px 8px;
     gap: 4px;
@@ -39,7 +38,7 @@ hr {
 
 .footer a {
     text-decoration: underline;
-    color: #2c2c2c;
+    color: #D6C6A5;
     font-size: clamp(0.4rem, 1.2vw, 1rem);
     white-space: nowrap;
 }

@@ -5,7 +5,7 @@
 }
 
 input {
-    background-color: #2a2a2a;
+    background: rgba(42, 42, 42, 0.5);
     width: 90%;
     border-radius: 5px;
     height: 35px;
@@ -18,6 +18,8 @@ input {
     border-left: none;
     box-shadow: 2px 2px 12px 10px #0000001a;
     padding: 0px 10px 0px 10px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .input {
@@ -29,6 +31,9 @@ input {
     position: sticky;
     transition: top 0.3s ease;
     z-index: 1000;
+    background: rgba(99, 92, 75, 0.3);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .input.nav-hidden {

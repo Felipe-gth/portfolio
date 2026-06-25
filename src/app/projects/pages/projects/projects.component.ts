@@ -14,7 +14,7 @@ import { Project } from '../../shared/models/project.model';
                 [class.nav-hidden]="isNavbarHidden"
             >
                 <input
-                    type="search"
+                    type="text"
                     autocomplete="off"
                     placeholder="Procurar projeto"
                     aria-label="Procurar projeto"
