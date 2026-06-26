@@ -1,29 +1,72 @@
 .projects-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 370px);
     justify-content: center;
-    gap: 32px;
+    gap: clamp(16px, calc(3.67cqw + 3.67px), 32px);
     padding: 0 32px;
+    container-type: inline-size;
     margin: 15px auto 0 !important;
     max-width: 1640px;
+    width: 100%;
     list-style: none;
     box-sizing: border-box;
-    padding-bottom: 32px;
+    padding-bottom: 15px;
+}
+
+@media (min-width: 1440px) {
+    .projects-list {
+        grid-template-columns: repeat(4, minmax(0, 370px));
+    }
+}
+
+@media (min-width: 1088px) and (max-width: 1439px) {
+    .projects-list {
+        grid-template-columns: repeat(3, minmax(0, 370px));
+    }
+}
+
+@media (max-width: 1087px) {
+    .projects-list {
+        grid-template-columns: repeat(2, minmax(0, 370px));
+    }
 }
 
 .project {
     background-color: #373737;
     border-radius: 15px;
     border: 1px solid #d6cdb8;
-    min-height: 450px;
-    max-height: border-box;
+    aspect-ratio: 37 / 45;
+
     color: #f0e8d4;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0px 25px 25px 25px;
+
+    padding:
+        clamp(0.6rem, 5.2cqw, 1.2rem)
+        clamp(0.75rem, 6.5cqw, 1.5rem)
+        clamp(0.75rem, 6.5cqw, 1.5rem)
+        clamp(0.75rem, 6.5cqw, 1.5rem);
+
     box-shadow: 0px 0px 12px 10px #0000001a;
+
     box-sizing: border-box;
+
+    overflow: hidden;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+
+    min-width: 0;
+    max-width: 100%;
+
+    container-type: inline-size;
+}
+
+.project > * {
+    max-width: 100%;
+    min-width: 0;
 }
 
 .project-title {
@@ -31,91 +74,227 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    gap: clamp(0.25rem, 1.5cqw, 0.5rem);
+
+    max-width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.project h1 {
+    font-size: clamp(0.85rem, 7.8cqw, 1.75rem);
+
+    margin:
+        clamp(0.125rem, 0.8cqw, 0.375rem)
+        0
+        clamp(0.25rem, 1.5cqw, 0.625rem)
+        0;
+
+    flex: 1;
+    min-width: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.project p {
+    font-size: clamp(0.65rem, 5.5cqw, 1.25rem);
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .project-description {
     gap: 0px;
+
+    max-width: 100%;
+    min-width: 0;
 }
 
 .project-description > p:first-child {
     margin-top: 4px;
 }
 
+.project .technologies ul li {
+    font-size: clamp(0.6rem, 5cqw, 1.1rem);
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
 .technologies {
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+
+    margin-bottom: clamp(0.75rem, 10cqw, 2.5rem);
+
+    max-width: 100%;
+    min-width: 0;
 }
 
 .technologies p {
-    margin: 10px 0px 4px 0px;
+    margin:
+        clamp(0.25rem, 1.5cqw, 0.625rem)
+        0px
+        clamp(0.125rem, 0.8cqw, 0.25rem)
+        0px;
 }
 
-.technologies ul{
+.technologies ul {
     list-style-type: disc;
-    padding-left: 40px;
+
+    padding-left: clamp(0.75rem, 10cqw, 2.5rem);
+
     margin: 0px;
+
+    max-width: 100%;
+    min-width: 0;
 }
+
+/* =========================
+   IFRAME
+========================= */
 
 .iframe {
     position: relative;
+
     width: 100%;
+    aspect-ratio: 16 / 9;
+
     overflow: hidden;
-    border-radius: 10px;
-    z-index: 0;
+
+    border-radius: 12px;
+
+    isolation: isolate;
+
+    clip-path: inset(0 round 12px);
+
+    min-width: 0;
+    max-width: 100%;
 }
 
 .iframe iframe {
     display: block;
+
     width: 100%;
+    height: 100%;
+
     border: none;
-    border-radius: 10px;
-    z-index: 0;
+
+    border-radius: inherit;
+
+    clip-path: inset(0 round 12px);
+
+    backface-visibility: hidden;
+
+    min-width: 0;
+    max-width: 100%;
 }
+
+/* =========================
+   OVERLAY / GLASSMORPHISM
+========================= */
 
 .acessar {
     position: absolute;
+
     inset: 0;
+
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
+    overflow: hidden;
+
+    border-radius: inherit;
+
     text-decoration: none;
+
+    z-index: 2;
 }
 
 .acessar::before {
     content: '';
+
     position: absolute;
-    inset: 0;
 
-    background: linear-gradient(to top, #2c2c2c 0%, #40404080 30%, transparent 60%);
+    top: 0;
+    left: 0;
+    right: 0;
 
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.3s ease;
+    height: calc(100% + 2px);
 
     border-radius: inherit;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(20,20,20,.62) 0%,
+            rgba(20,20,20,.26) 38%,
+            rgba(255,255,255,.04) 100%
+        );
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.08),
+        0 8px 32px rgba(0,0,0,.18);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    transition: opacity .3s ease;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    clip-path: inset(0 round 12px);
 }
 
 .acessar span {
     position: relative;
-    z-index: 1;
 
-    margin-bottom: 25px;
+    z-index: 2;
+
+    margin-bottom: clamp(0.75rem, 6cqw, 1.563rem);
+
+    font-size: clamp(0.7rem, 6cqw, 1.35rem);
+
+    color: #dfddcb;
 
     transform: translateY(30px);
+
     opacity: 0;
-    transition: all 0.3s ease;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+
+    font-weight: 900;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,.45);
 }
 
 .iframe:hover .acessar::before {
     opacity: 1;
-    transform: translateY(0);
 }
 
 .iframe:hover .acessar span {
     transform: translateY(0);
     opacity: 1;
 }
+
+/* =========================
+   LINKS / TEXTO
+========================= */
 
 .iframe a {
     font-weight: 900;
@@ -138,13 +317,37 @@ a {
 }
 
 a:hover {
-    text-decoration: underline 1px solid #dfddcb;;
+    text-decoration: underline 1px solid #dfddcb;
     text-underline-offset: 2px;
     color: #dfddcb;
 }
 
 #a-Details {
-    text-decoration: underline 1px solid #dfddcb;;
+    font-size: clamp(0.6rem, 5.2cqw, 1.2rem);
+
+    text-decoration: underline 1px solid #dfddcb;
+
     text-underline-offset: 2px;
-    margin-top: 5px
+
+    margin-top: 5px;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 740px) {
+    .technologies ul {
+        padding-left: clamp(0.5rem, 8cqw, 1.25rem);
+    }
+}
+
+@media (max-width: 1087px) {
+    .projects-list {
+        padding: 0 max(16px, calc((100% - 772px) / 2));
+    }
 }

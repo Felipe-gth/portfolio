@@ -4,6 +4,12 @@
     flex-direction: column;
 }
 
+app-project {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
 input {
     background: rgba(42, 42, 42, 0.5);
     width: 90%;
