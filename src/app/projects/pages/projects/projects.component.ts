@@ -59,4 +59,9 @@ export class ProjectsComponent implements OnInit {
             );
         }
     }
+
+    clearFilter() {
+        this.buttons.forEach((button) => (button.selected = false));
+        this.filteredProjects = this.projectsCm;  
+    }
 }

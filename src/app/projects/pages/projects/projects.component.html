@@ -19,7 +19,9 @@
                         *ngIf="button.name != undefined"
                         > {{ button.name }} </button>
                     </li>
+                    <li id="clear-filter"><button (click)="clearFilter()" class="category-button"><i class="fa-solid fa-eraser"></i></button></li>
                 </ul>
+
             </div>
 
             <app-project [projects]="filteredProjects"></app-project>
