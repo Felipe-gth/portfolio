@@ -16,6 +16,7 @@ export const projects: Project[] = [
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project1',
+        category: 'Web application'
     },
     {
         id: 2,
@@ -28,6 +29,7 @@ export const projects: Project[] = [
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project2',
+        category: 'Web application'
     },
     {
         id: 3,
@@ -40,6 +42,7 @@ export const projects: Project[] = [
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project3',
+        category: 'Desktop application'
     },
     {
         id: 4,
@@ -51,6 +54,7 @@ export const projects: Project[] = [
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project4',
+        category: 'API'
     },
     {
         id: 5,
@@ -63,6 +67,7 @@ export const projects: Project[] = [
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project1',
+        category: 'Portfolio'
     },
     {
         id: 6,

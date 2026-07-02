@@ -1,0 +1,26 @@
+<section class="projects">
+            <div class="sticky-group" [class.nav-hidden]="isNavbarHidden">
+                <div role="search" class="input">
+                    <input
+                        type="text"
+                        autocomplete="off"
+                        placeholder="Procurar projeto"
+                        aria-label="Procurar projeto"
+                        [(ngModel)]="filter"
+                        name="filter"
+                        (ngModelChange)="filterProjects($event)"
+                    />
+                </div>
+                <ul class="categories">
+                    <li *ngFor="let button of buttons">
+                        <button (click)="filterByCategory(button)"
+                        class="category-button"
+                        [class.selected]="button.selected"
+                        *ngIf="button.name != undefined"
+                        > {{ button.name }} </button>
+                    </li>
+                </ul>
+            </div>
+
+            <app-project [projects]="filteredProjects"></app-project>
+        </section>

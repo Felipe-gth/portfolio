@@ -8,4 +8,5 @@ export interface Project {
     versions?: Version[];
     imagesURL?: string[];
     link?: string;
+    category?: string;
 }
