@@ -1,28 +1,41 @@
 <section class="projects">
-            <div class="sticky-group" [class.nav-hidden]="isNavbarHidden">
-                <div role="search" class="input">
-                    <input
-                        type="text"
-                        autocomplete="off"
-                        placeholder="Procurar projeto"
-                        aria-label="Procurar projeto"
-                        [(ngModel)]="filter"
-                        name="filter"
-                        (ngModelChange)="filterProjects($event)"
-                    />
-                </div>
-                <ul class="categories">
-                    <li *ngFor="let button of buttons">
-                        <button (click)="filterByCategory(button)"
+    <div class="sticky-group" [class.nav-hidden]="isNavbarHidden">
+        <div role="search" class="input">
+            <input
+                type="text"
+                autocomplete="off"
+                placeholder="Procurar projeto"
+                aria-label="Procurar projeto"
+                [(ngModel)]="filter"
+                name="filter"
+                (ngModelChange)="filterProjects($event)"
+            />
+        </div>
+
+        <div class="categories-wrapper">
+            <ul class="categories" *ngIf="filters">
+                <li *ngFor="let categoryButton of categories">
+                    <button
+                        (click)="filterByCategory(categoryButton)"
                         class="category-button"
-                        [class.selected]="button.selected"
-                        *ngIf="button.name != undefined"
-                        > {{ button.name }} </button>
-                    </li>
-                    <li id="clear-filter"><button (click)="clearFilter()" class="category-button"><i class="fa-solid fa-eraser"></i></button></li>
-                </ul>
+                        [class.selected]="categoryButton.selected"
+                        *ngIf="categoryButton.name != undefined"
+                    >
+                        {{ categoryButton.name }}
+                    </button>
+                </li>
+            </ul>
 
-            </div>
+            <button (click)="clearFilter()" class="category-button" *ngIf="filters" id="clear-filter">
+                Limpar <i class="fa-solid fa-eraser"></i>
+            </button>
+        </div>
 
-            <app-project [projects]="filteredProjects"></app-project>
-        </section>
+        <button class="category-button filter-button"
+            (click)="showCategories()" >
+            Filtrar <i class="fa-solid fa-filter"></i>
+        </button>
+    </div>
+
+    <app-project [projects]="filteredProjects"></app-project>
+</section>

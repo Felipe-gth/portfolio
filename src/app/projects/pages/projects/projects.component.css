@@ -10,6 +10,16 @@ app-project {
     min-width: 0;
 }
 
+.input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(99, 92, 75, 0.3);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
 input {
     background: rgba(42, 42, 42, 0.5);
     width: 90%;
@@ -23,7 +33,7 @@ input {
     border-bottom: 1px solid #f0e8d4;
     border-left: none;
     box-shadow: 2px 2px 12px 10px #0000001a;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 0px 0px 10px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
@@ -39,35 +49,28 @@ input {
     top: 10px;
 }
 
-.input {
-    width: 100%;
+.categories-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(99, 92, 75, 0.3);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    height: 16px;
-    width: 16px;
-    background: red; /* exemplo */
-    cursor: pointer;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
 }
 
 .categories {
-    margin: 13px 0 0 8px !important;
-    padding: 0;
+    position: relative;
     list-style: none;
+    margin: 0; /* espaço igual dos dois lados */
+    padding: 0 70px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
+    width: 100%;
+    gap: 10px;
+    transition: background 0.3s ease;
 }
 
 .category-button {
+    margin: 13px 0 0 0;
     background: rgba(72, 67, 57, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -77,7 +80,6 @@ input[type="search"]::-webkit-search-cancel-button {
     cursor: pointer;
     color: #f0e8d4;
     font-size: 1.1rem;
-    transition: background 0.3s ease;
 }
 
 .category-button:hover {
@@ -85,10 +87,18 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .category-button.selected {
-    background: rgba(255, 255, 255, 0.8);
+    background: #ffffffcc;
     color: #000000;
 }
 
 #clear-filter {
-    margin-left: -10px;
+    position: absolute;
+    right: 10px;
+    top: 80px;
+}
+
+.filter-button {
+    position: absolute;
+    right: 10px;
+    top: 35px;
 }

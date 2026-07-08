@@ -14,9 +14,11 @@ export class ProjectsComponent implements OnInit {
     filter: string = '';
     projectsCm: Project[] = projects;
     filteredProjects: Project[] = [];
-    isNavbarHidden = false;
+    
+    isNavbarHidden: boolean = false;
+    filters: boolean = false;
 
-    public buttons: CategoryButton[] = [];
+    public categories: CategoryButton[] = [];
 
     constructor(private navbarService: NavbarService) {}
 
@@ -27,7 +29,7 @@ export class ProjectsComponent implements OnInit {
             this.isNavbarHidden = hidden;
         });
 
-        this.buttons = this.filteredProjects.map((p) => p.category)
+        this.categories = this.filteredProjects.map((p) => p.category)
             .filter((v, i, a) => a.indexOf(v) === i)
             .map((category) => ({ name: category, selected: false }));
     }
@@ -38,16 +40,20 @@ export class ProjectsComponent implements OnInit {
         );
     }
 
+    showCategories() {
+        this.filters = !this.filters;
+    }
+
     getCategories(): string[] {
         return [...new Set(this.projectsCm.map((p) => p.category))].filter(
             (v): v is string => !!v
         );
     }
 
-    filterByCategory(button: CategoryButton) {
-        button.selected = !button.selected;
+    filterByCategory(categoryButton: CategoryButton) {
+        categoryButton.selected = !categoryButton.selected;
 
-        const selectedCategories = this.buttons
+        const selectedCategories = this.categories
             .filter((b) => b.selected)
             .map((b) => b.name);
 
@@ -61,7 +67,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     clearFilter() {
-        this.buttons.forEach((button) => (button.selected = false));
+        this.categories.forEach((categoryButton: CategoryButton) => (categoryButton.selected = false));
         this.filteredProjects = this.projectsCm;  
     }
 }
