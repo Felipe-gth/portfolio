@@ -15,7 +15,7 @@ export const projects: Project[] = [
             {version: 2, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
         ],
         imagesURL: ['image1, image2, image3'],
-        link: 'https://example.com/project1',
+        link: 'https://g1.globo.com/',
         category: 'Web application'
     },
     {
