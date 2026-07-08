@@ -19,10 +19,15 @@
     background-color: #373737;
     border-radius: 15px;
     border: 1px solid #d6cdb8;
-    padding: 0px 20px;
+    padding: 0 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-sizing: border-box;
+    container-type: inline-size;
+}
+
+.card.expanded {
+    padding: 0 20px 20px 20px;
 }
 
 .card-header {
@@ -42,8 +47,9 @@
     margin: 0;
     padding: 0 0 16px 0;
     color: #dfddcb;
-    font-size: 15px;
+    font-size: clamp(0.65rem, 3.5cqw, 15px);
     text-align: left;
+    font-weight: bold;
 }
 
 .arrow {
@@ -56,5 +62,14 @@
 }
 
 #version {
-    font-size: 20px;
+    font-size: clamp(0.85rem, 4.5cqw, 20px);
+}
+
+.changes {
+    list-style: disc;
+    text-align: start;
+}
+
+.change {
+    font-size: clamp(0.65rem, 3.5cqw, 15px);
 }
