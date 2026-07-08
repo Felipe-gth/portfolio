@@ -1,19 +1,19 @@
 <section class="projects">
     <div class="sticky-group" [class.nav-hidden]="isNavbarHidden">
-        <div role="search" class="input">
-            <input
-                type="text"
-                autocomplete="off"
-                placeholder="Procurar projeto"
-                aria-label="Procurar projeto"
-                [(ngModel)]="filter"
-                name="filter"
-                (ngModelChange)="filterProjects($event)"
-            />
-        </div>
+        <div class="filter-layout">
+            <div role="search" class="input">
+                <input
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Procurar projeto"
+                    aria-label="Procurar projeto"
+                    [(ngModel)]="filter"
+                    name="filter"
+                    (ngModelChange)="filterProjects($event)"
+                />
+            </div>
 
-        <div class="categories-wrapper">
-            <ul class="categories" *ngIf="filters">
+            <ul class="categories" [class.visible]="filters">
                 <li *ngFor="let categoryButton of categories">
                     <button
                         (click)="filterByCategory(categoryButton)"
@@ -25,16 +25,16 @@
                     </button>
                 </li>
             </ul>
+        </div>
 
-            <button (click)="clearFilter()" class="category-button" *ngIf="filters" id="clear-filter">
+        <div class="filter-actions">
+            <button class="category-button filter-button" (click)="showCategories()">
+                Filtrar <i class="fa-solid fa-filter"></i>
+            </button>
+            <button (click)="clearFilter()" class="category-button" @fadeSlide *ngIf="filters" id="clear-filter">
                 Limpar <i class="fa-solid fa-eraser"></i>
             </button>
         </div>
-
-        <button class="category-button filter-button"
-            (click)="showCategories()" >
-            Filtrar <i class="fa-solid fa-filter"></i>
-        </button>
     </div>
 
     <app-project [projects]="filteredProjects"></app-project>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { NavbarService } from 'src/app/services/navbar.service';
 
 import { projects } from '../../shared/data/projects.data';
@@ -9,6 +10,17 @@ import { CategoryButton } from '../../shared/models/categoryButton.model';
     selector: 'app-projects',
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.css'],
+    animations: [
+        trigger('fadeSlide', [
+            transition(':enter', [
+                style({ opacity: 0, transform: 'translateY(-4px)' }),
+                animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+            ]),
+            transition(':leave', [
+                animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-4px)' }))
+            ])
+        ])
+    ]
 })
 export class ProjectsComponent implements OnInit {
     filter: string = '';

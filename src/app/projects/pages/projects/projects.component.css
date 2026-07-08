@@ -10,7 +10,17 @@ app-project {
     min-width: 0;
 }
 
+.filter-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: start;
+    padding-right: 10px;
+}
+
 .input {
+    grid-column: 1 / -1;
+    grid-row: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -49,37 +59,61 @@ input {
     top: 10px;
 }
 
-.categories-wrapper {
+.filter-actions {
+    position: absolute;
+    right: 10px;
+    top: 35px;
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: clamp(6px, 0.9vw, 13px);
+}
+
+.filter-button {
+    position: static;
+    margin-top: 13px;
+}
+
+#clear-filter {
+    position: static;
+    margin-top: 0;
 }
 
 .categories {
-    position: relative;
+    grid-column: 1;
+    grid-row: 2;
+    box-sizing: border-box;
     list-style: none;
-    margin: 0; /* espaço igual dos dois lados */
+    margin: 0;
     padding: 0 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    gap: 10px;
-    transition: background 0.3s ease;
+    gap: clamp(4px, 0.7vw, 10px);
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-4px);
+    overflow: hidden;
+    transition: max-height 200ms ease-out, opacity 200ms ease-out, transform 200ms ease-out, background 0.3s ease;
+}
+
+.categories.visible {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .category-button {
-    margin: 13px 0 0 0;
+    margin: clamp(8px, 1vw, 13px) 0 0 0;
     background: rgba(72, 67, 57, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid transparent;
     border-radius: 5px;
-    padding: 6px 14px;
+    padding: clamp(4px, 0.5vw, 6px) clamp(8px, 1.2vw, 14px);
     cursor: pointer;
     color: #f0e8d4;
-    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 1.2vw, 1.1rem);
 }
 
 .category-button:hover {
@@ -91,14 +125,3 @@ input {
     color: #000000;
 }
 
-#clear-filter {
-    position: absolute;
-    right: 10px;
-    top: 80px;
-}
-
-.filter-button {
-    position: absolute;
-    right: 10px;
-    top: 35px;
-}
