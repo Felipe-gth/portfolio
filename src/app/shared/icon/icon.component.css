@@ -1,5 +1,5 @@
 .icon {
-    width: 60px;
-    height: 60px;
-    margin-top: 35px;
+    width: clamp(42px, 16cqw, 60px);
+    height: clamp(42px, 16cqw, 60px);
+    margin-top: clamp(20px, 9.5cqw, 35px);
 }

@@ -21,7 +21,7 @@ export const projects: Project[] = [
     {
         id: 2,
         title: 'TCC 2026',
-        description: 'This is the second project',
+        description: 'Um sistema para organização da agenda de psicólogos.',
         technologies: [
             { name: 'React', version: '17.0.2', iconURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png' },
             { name: 'JavaScript', version: 'ES6', iconURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png' },
