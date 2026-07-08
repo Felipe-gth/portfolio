@@ -11,8 +11,8 @@ export const projects: Project[] = [
             { name: 'CSS', version: '3', iconURL: 'https://prosimples.com/wp-content/uploads/2024/01/css-3.png', doc: 'https://devdocs.io/css/' },
         ],
         versions: [ 
-            {version: 1, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'},
-            {version: 2, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+            {version: 1, changes: ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis provident, dolores iste dolorem impedit unde repellendus voluptatum magni perferendis eius laborum quos. Amet, corrupti ab expedita quibusdam quos aperiam aspernatur fugit dignissimos, provident, unde ad natus. Officiis nam possimus voluptas quis eligendi voluptatem dolorem atque fuga est sint expedita ipsa labore, incidunt, quos nesciunt tenetur tempore at delectus corrupti, veritatis nemo perspiciatis eos. Totam tenetur delectus iure incidunt, possimus numquam optio pariatur nesciunt nam iusto, maxime quaerat. Quas laborum est obcaecati cumque. Vitae laborum odit, adipisci iste ipsum id maxime facere! Excepturi rem reiciendis repellat voluptatibus laborum. Sed harum pariatur iure, error in doloremque totam hic. Nesciunt neque, laudantium molestiae doloribus obcaecati sunt libero quibusdam nihil ipsam. Eum reprehenderit, nobis doloribus iusto sequi itaque fuga, nam alias culpa accusantium sed dolorum assumenda cumque repellat officia beatae quod! Repellat obcaecati nihil libero et omnis in fugiat, natus consequatur, praesentium, fugit saepe adipisci! Vel laboriosam cupiditate, minima blanditiis nihil tempora officiis non, similique quas, enim aperiam esse nisi facere reiciendis eius vero! Perferendis quam molestias quibusdam repellendus, laborum accusamus quisquam. Tempora consequuntur cumque aperiam aspernatur corporis. Cumque sunt eum placeat dolorum, repudiandae accusamus iste totam hic consectetur aliquam reprehenderit mollitia! Delectus impedit repudiandae expedita velit obcaecati, assumenda molestias aliquid quidem, quibusdam veniam dolore sint! Nobis, dolorem debitis ut asperiores quibusdam vel maiores animi deserunt']},
+            {version: 2, changes: ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']}
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://g1.globo.com/',
@@ -91,8 +91,8 @@ export const projects: Project[] = [
             { name: 'CSS', version: '3', iconURL: 'https://prosimples.com/wp-content/uploads/2024/01/css-3.png', doc: 'https://devdocs.io/css/' },
         ],
         versions: [ 
-            {version: 1, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'},
-            {version: 2, description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+            {version: 1, changes: ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']},
+            {version: 2, changes: ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']}
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://example.com/project1',
