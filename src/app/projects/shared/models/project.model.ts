@@ -8,5 +8,6 @@ export interface Project {
     versions?: Version[];
     imagesURL?: string[];
     link?: string;
+    gthRepo?: string;
     category?: string;
 }
