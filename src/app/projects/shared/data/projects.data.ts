@@ -16,6 +16,7 @@ export const projects: Project[] = [
         ],
         imagesURL: ['image1, image2, image3'],
         link: 'https://g1.globo.com/',
+        gthRepo: 'https://github.com/Felipe-gth/portfolio',
         category: 'Web application'
     },
     {

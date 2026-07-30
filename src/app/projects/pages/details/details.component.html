@@ -1,5 +1,6 @@
 <section class="details">
     <h1>{{ project?.title }}</h1>
+    <p>{{ project?.description}}</p>
     
     <article>
         <app-technology [technologies]="project?.technologies"></app-technology>
@@ -7,5 +8,11 @@
 
     <article>
         <app-version [versions]="project?.versions"></app-version>
+    </article>
+
+    <article class="links">
+        <p>Links:</p>
+        <a [href]="project?.link" target="_blank" [title]="project?.link">Acessar projeto</a>
+        <a [href]="project?.gthRepo" target="_blank" [title]="project?.gthRepo">Repositório do github</a>
     </article>
 </section>
